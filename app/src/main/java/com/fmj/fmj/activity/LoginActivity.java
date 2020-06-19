@@ -84,7 +84,11 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //登录
                List<MemberInfo> infos = userDao.queryRaw("where USER_NAME=? and PASS_WORD=?",et_user.getText().toString() ,et_password.getText().toString());
-               infos.get(0).getPassWord();
+               if (infos.size()>0){
+                   Toast.makeText(mContxt ,"登录成功！id为"+infos.get(0).getId(),Toast.LENGTH_SHORT).show();
+               }else {
+                   Toast.makeText(mContxt ,"用户名或密码错误",Toast.LENGTH_SHORT).show();
+               }
             }
         });
 
