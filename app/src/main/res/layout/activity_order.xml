@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    >
+
+    <include
+        android:id="@+id/title_main"
+        layout="@layout/title_main" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_good"
+            android:layout_width="300dp"
+            android:layout_height="300dp">
+
+        </ImageView>
+
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="2.00"
+                android:textSize="16dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="库存:100"
+                android:textSize="16dp">
+
+            </TextView>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="购买数量"
+                android:textSize="16dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+            <EditText
+                android:id="@+id/et_num"
+                android:digits="1234567890"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="16dp">
+            </EditText>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_mnum"
+                android:digits="1234567890"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="16dp">
+            </TextView>
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="2.00元"
+                android:textSize="16dp"
+                android:id="@+id/tv_all_price"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_fk"
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="立即付款"
+            android:textSize="16dp">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_rmb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/rmb_5"
+            android:id="@+id/rl_5"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="50dp">
+
+        </ImageView>
+
+
+        <ImageView
+            android:src="@drawable/rmb_10"
+            android:id="@+id/rl_10"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="50dp">
+
+        </ImageView>
+
+
+        <ImageView
+            android:src="@drawable/rmb_20"
+            android:id="@+id/rl_20"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="50dp">
+
+        </ImageView>
+
+
+        <ImageView
+            android:src="@drawable/rmb_50"
+            android:id="@+id/rl_50"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="50dp">
+
+        </ImageView>
+
+
+        <ImageView
+            android:src="@drawable/rmb_100"
+            android:id="@+id/rl_100"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="50dp">
+
+        </ImageView>
+
+    </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_bb"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="谢谢光临 再见"
+        android:textSize="16dp">
+
+    </TextView>
+</LinearLayout>

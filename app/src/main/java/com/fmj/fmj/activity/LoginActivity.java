@@ -144,6 +144,15 @@ public class LoginActivity extends AppCompatActivity {
         rl_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if (TextUtils.isEmpty(et_user.getText())){
+                    Toast.makeText(mContxt ,"请输入用户名",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(et_password.getText())){
+                    Toast.makeText(mContxt ,"请输入密码",Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 //登录
                List<MemberInfo> infos = userDao.queryRaw("where USER_NAME=? and PASS_WORD=?",et_user.getText().toString() ,et_password.getText().toString());
                if (infos.size()>0){
