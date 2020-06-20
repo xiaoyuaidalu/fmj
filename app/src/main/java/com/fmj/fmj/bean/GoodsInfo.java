@@ -1,8 +1,8 @@
 package com.fmj.fmj.bean;
 
 import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.Generated;
+import org.greenrobot.greendao.annotation.Id;
 
 /**
  * Created by Administrator on 2020/6/19.
@@ -30,7 +30,15 @@ import org.greenrobot.greendao.annotation.Generated;
  */
 
 @Entity
-public class MemberInfo {
+public class GoodsInfo {
+
+
+    @Id
+    private String id;
+    private String goodNames;
+    private String imageName;
+    private int price;//fen
+
     public String getId() {
         return id;
     }
@@ -39,57 +47,54 @@ public class MemberInfo {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getGoodNames() {
+        return goodNames;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setGoodNames(String goodNames) {
+        this.goodNames = goodNames;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getImageName() {
+        return imageName;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
     }
 
-    public String getName() {
-        return name;
+    public int getPrice() {
+        return price;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
-    public String getPhone() {
-        return phone;
+    public int getNum() {
+        return num;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setNum(int num) {
+        this.num = num;
     }
 
-    @Id
-    private String id;
-    private String userName;
-    private String passWord;
-    private String name;
-    private String phone;
-    @Generated(hash = 1302997623)
-    public MemberInfo(String id, String userName, String passWord, String name,
-            String phone) {
+    private int num;//库存
+
+    @Generated(hash = 2095715452)
+    public GoodsInfo(String id, String goodNames, String imageName, int price,
+            int num) {
         this.id = id;
-        this.userName = userName;
-        this.passWord = passWord;
-        this.name = name;
-        this.phone = phone;
+        this.goodNames = goodNames;
+        this.imageName = imageName;
+        this.price = price;
+        this.num = num;
     }
 
-    @Generated(hash = 175316736)
-    public MemberInfo() {
+    @Generated(hash = 1227172248)
+    public GoodsInfo() {
     }
+
 
 
 }

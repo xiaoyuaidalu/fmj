@@ -37,7 +37,16 @@ public class MyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        instance = this;
+
         initDreenDao();
+    }
+
+    private static MyApp instance = null;
+
+    public static MyApp getInstance() {
+        return instance;
     }
 
     /**

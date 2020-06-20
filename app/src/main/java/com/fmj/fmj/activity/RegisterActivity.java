@@ -1,6 +1,7 @@
 package com.fmj.fmj.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -16,8 +17,10 @@ import com.fmj.fmj.R;
 import com.fmj.fmj.bean.MemberInfo;
 import com.fmj.fmj.db.DaoSession;
 import com.fmj.fmj.db.MemberInfoDao;
+import com.fmj.fmj.utils.SPUtils;
 import com.hacknife.immersive.Immersive;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -100,13 +103,32 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
+                //查重
+                List<MemberInfo> infos = userDao.queryRaw("where USER_NAME=?",et_user.getText().toString());
+                if (infos.size()>0){
+                    //已经存在
+                    Toast.makeText(mContxt ,"该用户名已经存在!",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 MemberInfo info = new MemberInfo();
-                info.setId(UUID.randomUUID().toString());
+
+                String id = UUID.randomUUID().toString();
+
+                info.setId(id);
                 info.setUserName(et_user.getText().toString());
                 info.setPassWord(et_password.getText().toString());
                 info.setName(et_name.getText().toString());
                 info.setPhone(et_phone.getText().toString());
                 userDao.insert(info);
+
+                SPUtils.putString(mContxt , "name" ,et_name.getText().toString());
+                SPUtils.putString(mContxt , "id" ,id);
+                Toast.makeText(MyApp.getInstance() ,"注册成功!",Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(mContxt , MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
